@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmuFlash - Emulator Game Retro dengan 250 Games Full Patch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Animasi saat scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        
+        /* Swiper custom styles */
+        .swiper {
+            width: 100%;
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+        
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Animasi floating */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Glow effect */
+        .glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Neon text effect */
+        .neon-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.7), 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10  flex items-center justify-center">
+                    <img src = "icon/icon.png" alt = "icon" class = "w-10 h-10 bg-blue-900/30 rounded-xl flex items-center justify-center mb-1">
+                </div>
+                <span class="text-xl font-bold text-white">Emu<span class="text-blue-400">Flash</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Home</a>
+                <a href="#features" class="text-gray-300 hover:text-blue-400 transition-colors">Fitur</a>
+                <a href="#games" class="text-gray-300 hover:text-blue-400 transition-colors">Game</a>
+                <a href="#download" class="text-gray-300 hover:text-blue-400 transition-colors">Download</a>
+            </div>
+            
+            <button class="md:hidden text-gray-300 hover:text-blue-400">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 slide-in-left">
+                    <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-6">
+                        <span class="text-blue-400 font-medium">250+ Games Full Patch</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                        <span class="block">Emulator Game</span>
+                        <span class="text-blue-400 neon-text">Retro Lengkap</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        Nikmati kembali kenangan masa kecil dengan EmuFlash. Emulator retro yang powerful dengan 250 game klasik sudah termasuk full patch dan optimasi untuk pengalaman terbaik.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#download" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fas fa-download"></i>
+                            <span>Download Sekarang</span>
+                        </a>
+                        <a href="#features" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 border border-gray-700 flex items-center justify-center space-x-2">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Lihat Fitur</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 flex justify-center slide-in-right">
+                    <div class="relative">
+                        <!-- Main Hero Image -->
+                        <div class="w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden glow border-4 border-blue-900/30">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="EmuFlash Emulator" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <!-- Floating game images -->
+                        <div class="absolute -top-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-2 border-blue-700/50 floating" style="animation-delay: 0.5s;">
+                            <img src="https://images.unsplash.com/photo-1498736297812-3a08021f206f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmV0cm8lMjBnYW1pbmd8ZW58MHx8MHx8fDA%3D" 
+                                 alt="Game Retro" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-2 border-blue-700/50 floating" style="animation-delay: 1s;">
+                            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Game Retro" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                    <span class="text-blue-400 font-medium">Fitur Unggulan</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Semua yang Anda Butuhkan dalam Satu Emulator</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">EmuFlash dirancang untuk memberikan pengalaman bermain game retro terbaik dengan fitur-fitur lengkap dan kemudahan penggunaan.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Instalasi Mudah</h3>
+                    <p class="text-gray-400">Proses instalasi sederhana, baik melalui PyPI untuk pengguna Python atau installer Windows yang lengkap.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-gamepad text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">250 Game Full Patch</h3>
+                    <p class="text-gray-400">Semua game sudah termasuk patch terbaru, traduksi, dan perbaikan bug. Siap dimainkan tanpa konfigurasi rumit.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Fitur Lengkap</h3>
+                    <p class="text-gray-400">Save state, fast forward, rewind, cheat code support, dan berbagai kustomisasi untuk pengalaman bermain optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Game Gallery Slider -->
+    <section id="games" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                    <span class="text-blue-400 font-medium">Koleksi Game</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">250+ Game Retro Terbaik</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Jelajahi koleksi lengkap game-game retro terbaik yang sudah dipatch dengan berbagai perbaikan, traduksi, dan enhancement.</p>
+            </div>
+            
+            <!-- Swiper Slider -->
+            <div class="swiper mySwiper fade-in">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide bg-gray-800">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Game Boy Advance Games" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Game Boy Advance</h3>
+                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">65 Game</span>
+                            </div>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Pokémon FireRed</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Final Fantasy VI</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> The Legend of Zelda</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide bg-gray-800">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Super Nintendo Games" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Super Nintendo</h3>
+                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">55 Game</span>
+                            </div>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Chrono Trigger</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Super Metroid</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> EarthBound</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide bg-gray-800">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1171&q=80" 
+                                 alt="PlayStation Games" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">PlayStation 1</h3>
+                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">30 Game</span>
+                            </div>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Final Fantasy VII</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Metal Gear Solid</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Castlevania: SotN</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide bg-gray-800">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Sega Genesis Games" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Sega Genesis</h3>
+                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">40 Game</span>
+                            </div>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Sonic the Hedgehog 2</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Streets of Rage 2</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Phantasy Star IV</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide bg-gray-800">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1332&q=80" 
+                                 alt="Nintendo NES Games" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold">Nintendo NES</h3>
+                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">45 Game</span>
+                            </div>
+                            <ul class="text-gray-400 space-y-2">
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Super Mario Bros. 3</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> The Legend of Zelda</li>
+                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Castlevania</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                    <span class="text-blue-400 font-medium">Download</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Download EmuFlash Sekarang</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Pilih versi yang sesuai dengan kebutuhan Anda. Gratis untuk digunakan dan selalu diperbarui.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Windows Download Card -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
+                            <i class="fab fa-windows text-blue-400 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Windows Full Package</h3>
+                            <p class="text-gray-400">Installer lengkap untuk Windows 10/11</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6">Installer lengkap untuk Windows (10/11) termasuk semua 250 game full patch. Tidak memerlukan dependensi tambahan tinggal mainkan saja.</p>
+                    
+                    <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                        <h4 class="font-bold text-white mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                            Sistem Requirement
+                        </h4>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Windows 10/11</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> 4GB RAM</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> 2GB ruang kosong</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> DirectX 11 compatible graphics</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Tinggal mainkan</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 11 January 2026</p>
+                            <p class="text-white font-bold">Ukuran: 1.7 GB</p>
+                        </div>
+                        <button class="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                            <i class="fas fa-download"></i>
+                            <span>Download for Windows</span>
+                        </button>
+                    </div>
+                </div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+                <!-- Windows Download Card -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
+                            <i class="fa-solid fa-download text-blue-400 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Download EmuFlash</h3>
+                            <p class="text-gray-400">Installer lengkap untuk Windows 10/11</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6">Kumpulan Game Flash yang dibuat oleh pengembang. Memiliki fitur penggunaan yang lengkap dan optimasi untuk pengalaman bermain game.</p>
+                    
+                    <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                        <h4 class="font-bold text-white mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                            Sistem Download
+                        </h4>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Tanpa iklan</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Download Cepat</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Full Package</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Semuah jenis platform</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 11 January 2026</p>
+                            <p class="text-white font-bold">Ukuran: 1.7 GB</p>
+                        </div>
+                        <button class="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                            <i class="fas fa-download"></i>
+                            <span>Download for Games</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Windows Download Card -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
+                            <i class="fa-solid fa-mobile text-blue-400 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Aplikasi Mobile</h3>
+                            <p class="text-gray-400">Aplikasi lengkap untuk Android dan iOS</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6">install lengkap untuk Android dan iOS. Tidak memerlukan dependensi tambahan tinggal mainkan saja.</p>
+                    
+                    <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                        <h4 class="font-bold text-white mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                            Sistem Requirement
+                        </h4>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Tanpa iklan</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Download Cepat</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Full Package</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Semuah jenis platform</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Ringan</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> support all Games</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 11 January 2026</p>
+                            <p class="text-white font-bold">Ukuran: 1.7 GB</p>
+                        </div>
+                        <button class="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                            <i class="fas fa-download"></i>
+                            <span>Download for Mobile</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- PyPI Download Card -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
+                            <i class="fab fa-python text-blue-400 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Versi PyPI</h3>
+                            <p class="text-gray-400">Untuk pengguna Python</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6">Instal melalui pip dengan perintah sederhana. Cocok untuk pengembang dan pengguna yang familiar dengan Python.</p>
+                    
+                    <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                        <h4 class="font-bold text-white mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                            Sistem Requirement
+                        </h4>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Python 3.8 atau lebih baru</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> pip sudah terinstal</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> 1GB ruang kosong</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-between">
+                        <div class="bg-gray-900 p-4 rounded-lg font-mono text-sm">
+                            <code class="text-green-400">pip install emuflash</code>
+                        </div>
+                        <button class="mt-4 sm:mt-0 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                            <i class="fas fa-terminal"></i>
+                            <span>Instal via pip</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src = "icon/icon.png" alt = "icon" class = "w-10 h-10 bg-blue-900/30 rounded-xl flex items-center justify-center mb-1">
+                        </div>
+                        <span class="text-xl font-bold text-white">Emu<span class="text-blue-400">Flash</span></span>
+                    </div>
+                    <p class="text-gray-400">Emulator Retro dengan 250 Game Full Patch</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-4">Website ini hanya untuk tujuan demonstrasi. EmuFlash adalah proyek fiktif untuk keperluan contoh desain web.</p>
+                    <div class="flex space-x-4 justify-center md:justify-end">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-python text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-windows text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>EmuFlash &copy; 2023 - Emulator Retro dengan 250 Game Full Patch. Semua hak cipta game tetap milik pemilik masing-masing.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+        
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for scroll animations
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Button click effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadButtons = document.querySelectorAll('button');
+            
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (this.textContent.includes('Download') || this.textContent.includes('Instal')) {
+                        e.preventDefault();
+                        
+                        // Animation on click
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 200);
+                        
+                        // Show notification
+                        let message = '';
+                        if (this.textContent.includes('Windows')) {
+                            message = 'Download untuk Windows akan dimulai. Dalam implementasi nyata, ini akan mengunduh file installer EmuFlash.';
+                        } else {
+                            message = 'Perintah pip install emuflash akan dijalankan. Dalam implementasi nyata, ini akan menginstal package EmuFlash dari PyPI.';
+                        }
+                        
+                        // Create a notification
+                        const notification = document.createElement('div');
+                        notification.className = 'fixed top-4 right-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300';
+                        notification.textContent = message;
+                        document.body.appendChild(notification);
+                        
+                        // Remove notification after 3 seconds
+                        setTimeout(() => {
+                            notification.style.opacity = '0';
+                            notification.style.transform = 'translateY(-10px)';
+                            setTimeout(() => {
+                                document.body.removeChild(notification);
+                            }, 300);
+                        }, 3000);
+                    }
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const navLinks = document.createElement('div');
+                    navLinks.className = 'fixed top-16 left-0 right-0 bg-gray-900 border-b border-gray-800 p-4 z-40 md:hidden';
+                    navLinks.innerHTML = `
+                        <div class="flex flex-col space-y-4">
+                            <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Home</a>
+                            <a href="#features" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Fitur</a>
+                            <a href="#games" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Game</a>
+                            <a href="#download" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Download</a>
+                        </div>
+                    `;
+                    
+                    // Check if menu is already open
+                    const existingMenu = document.querySelector('.mobile-menu');
+                    if (existingMenu) {
+                        document.body.removeChild(existingMenu);
+                        return;
+                    }
+                    
+                    navLinks.classList.add('mobile-menu');
+                    document.body.appendChild(navLinks);
+                    
+                    // Close menu when clicking outside
+                    document.addEventListener('click', function closeMenu(e) {
+                        if (!navLinks.contains(e.target) && e.target !== mobileMenuButton) {
+                            document.body.removeChild(navLinks);
+                            document.removeEventListener('click', closeMenu);
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
