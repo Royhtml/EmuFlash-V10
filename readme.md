@@ -2,6 +2,9 @@
 <div align="center">
 <img src = 'icon/icon.png'>
 </div>
+
+<div align="center">
+   
 # 🚀 在 Termux 中运行 .exe 文件
 
 [![Termux](https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white)](https://termux.com/)
@@ -11,7 +14,8 @@ A comprehensive guide on running Windows executable (.exe) files in Termux using
 
 在 Termux 中使用 Wine 和其他方法运行 Windows 可执行文件 (.exe) 的完整指南。
 
----
+</div>
+
 
 ## 📋 Prerequisites | 前提条件
 
