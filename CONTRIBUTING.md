@@ -9,8 +9,8 @@
 <div align="center">
    
 # 🚀 在 Termux 中运行 .exe 文件
+</div>
 
-## **English Version**
 
 ### **About EmuFlash & Adobe Flash (SWF)**
 EmuFlash is a preservation and emulation project focused on running legacy Adobe Flash (SWF) content in modern environments. Since Adobe ended support for Flash Player in Januari 11/01/2026, this project aims to keep interactive Flash animations, games, and applications accessible.
