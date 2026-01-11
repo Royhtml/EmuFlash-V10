@@ -1,7 +1,7 @@
 
-
-![EmuFlash Banner](https://via.placeholder.com/800x200.png?text=EmuFlash+Universal+Emulator)
-
+<div align="center">
+<img src = 'icon/icon.png'>
+</div>
 # 🚀 在 Termux 中运行 .exe 文件
 
 [![Termux](https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white)](https://termux.com/)
@@ -520,17 +520,6 @@ If you found this guide helpful, consider:
 
 ---
 
-<div align="center">
-  
-**Made with ❤️ for Termux community**  
-**为 Termux 社区用心制作**
-
-[![Termux](https://img.shields.io/badge/Termux-000000?style=flat&logo=termux&logoColor=white)](https://termux.com/)
-[![Wine](https://img.shields.io/badge/Wine-FFD700?style=flat&logo=wine&logoColor=black)](https://www.winehq.org/)
-[![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)](https://www.android.com/)
-
-</div>
-
 ## 🕹️ Supported Systems / 支持的系统
 
 | System / 系统 | Status / 状态 | Recommended Settings / 推荐设置 |
@@ -1033,3 +1022,16 @@ A: Only for downloading games. Play offline after.
 ---
 
 *Perfect for: Old PCs, low-end phones, flash game lovers, ad-haters, quick gaming sessions.*
+
+
+<div align="center">
+  
+**Made with ❤️ for Termux community**  
+**为 Termux 社区用心制作**
+
+[![Termux](https://img.shields.io/badge/Termux-000000?style=flat&logo=termux&logoColor=white)](https://termux.com/)
+[![Wine](https://img.shields.io/badge/Wine-FFD700?style=flat&logo=wine&logoColor=black)](https://www.winehq.org/)
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)](https://www.android.com/)
+
+</div>
+
