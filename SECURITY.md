@@ -1,5 +1,15 @@
 # 🔐 EmuFlash Security Policy & Guidelines
 
+<div align="center">
+<img src = 'icon/icon.png'>
+</div>
+
+<div align="center">
+   
+# 🚀 在 Termux 中运行 .exe 文件
+</div>
+
+
 ## 📜 Security Overview
 
 ### English | 中文
