@@ -1,7 +1,14 @@
 # **Contribution Guidelines for EmuFlash with Adobe Flash (SWF) Support**
 ## **EmuFlash 与 Adobe Flash (SWF) 支持贡献指南**
 
----
+
+<div align="center">
+<img src = 'icon/icon.png'>
+</div>
+
+<div align="center">
+   
+# 🚀 在 Termux 中运行 .exe 文件
 
 ## **English Version**
 
