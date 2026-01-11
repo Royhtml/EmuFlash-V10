@@ -1,9 +1,16 @@
 # **Contribution Guidelines for EmuFlash with Adobe Flash (SWF) Support**
 ## **EmuFlash 与 Adobe Flash (SWF) 支持贡献指南**
 
----
 
-## **English Version**
+<div align="center">
+<img src = 'icon/icon.png'>
+</div>
+
+<div align="center">
+   
+# 🚀 在 Termux 中运行 .exe 文件
+</div>
+
 
 ### **About EmuFlash & Adobe Flash (SWF)**
 EmuFlash is a preservation and emulation project focused on running legacy Adobe Flash (SWF) content in modern environments. Since Adobe ended support for Flash Player in Januari 11/01/2026, this project aims to keep interactive Flash animations, games, and applications accessible.
