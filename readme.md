@@ -10,6 +10,9 @@
 [![Termux](https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white)](https://termux.com/)
 [![Wine](https://img.shields.io/badge/Wine-FFD700?style=for-the-badge&logo=wine&logoColor=black)](https://www.winehq.org/)
 
+
+<a href = "https://pypi.org/project/emuflash/">https://pypi.org/project/emuflash/</a>
+
 A comprehensive guide on running Windows executable (.exe) files in Termux using Wine and other methods.
 
 在 Termux 中使用 Wine 和其他方法运行 Windows 可执行文件 (.exe) 的完整指南。
