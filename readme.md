@@ -1,6 +1,6 @@
 
 <div align="center">
-<img src = 'icon/icon.png'>
+<img src = 'https://github.com/Royhtml/EmuFlash-V10/raw/main/icon/icon.png'>
 </div>
 
 <div align="center">
@@ -16,21 +16,43 @@ A comprehensive guide on running Windows executable (.exe) files in Termux using
 
 </div>
 
-<img src="code/b2.png" width="100%"></td>
+<img src="https://github.com/Royhtml/EmuFlash-V10/raw/main/code/b2.png" width="100%"></td>
 
 <table>
-    <td><img src="code/b3.png" width="100%"></td>
-    <td><img src="code/b4.png" width="100%"></td>
+    <td><img src="https://github.com/Royhtml/EmuFlash-V10/raw/main/code/b3.png" width="100%"></td>
+    <td><img src="https://github.com/Royhtml/EmuFlash-V10/raw/main/code/b4.png" width="100%"></td>
   </tr>
 <tr>
-    <td><img src="code/b5.png" width="100%"></td>
-    <td><img src="code/b6.png" width="100%"></td>
+    <td><img src="https://github.com/Royhtml/EmuFlash-V10/raw/main/code/b5.png" width="100%"></td>
+    <td><img src="https://github.com/Royhtml/EmuFlash-V10/raw/main/code/b6.png" width="100%"></td>
   </tr>
 </table>
 
+## Running .exe Files | 运行 .exe 文件 Pypi Python Tutorials
+
+<img src = "repo/Roy.gif">
+
+### Step 1: Install Python
+
+```bash
+https://www.python.org/ftp/python/3.14.2/python-3.14.2-amd64.exe 
+```
+
+### Step 2: Install EmuFlash
+
+```bash
+pip install emuflash
+```
+
+### Step 3: Run EmuFlash
+
+```bash
+emuflash
+```
+
 ## 📋 Prerequisites | 前提条件
 
-<td><img src="code/b1.png" width="100%"></td>
+<td><img src="https://github.com/Royhtml/EmuFlash-V10/raw/main/code/b1.png" width="100%"></td>
 
 ### English
 - Termux installed from [F-Droid](https://f-droid.org/en/packages/com.termux/) (recommended) or Google Play
