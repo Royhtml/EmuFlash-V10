@@ -16,6 +16,20 @@ A comprehensive guide on running Windows executable (.exe) files in Termux using
 
 </div>
 
+<table>
+  <tr>
+    <td><img src="code/b1.png" width="100%"></td>
+    <td><img src="code/b2.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="code/b3.png" width="100%"></td>
+    <td><img src="code/b4.png" width="100%"></td>
+  </tr>
+<tr>
+    <td><img src="code/b5.png" width="100%"></td>
+    <td><img src="code/b6.png" width="100%"></td>
+  </tr>
+</table>
 
 ## 📋 Prerequisites | 前提条件
 
