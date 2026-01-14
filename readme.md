@@ -30,7 +30,7 @@ A comprehensive guide on running Windows executable (.exe) files in Termux using
 
 ## Running .exe Files | 运行 .exe 文件 Pypi Python Tutorials
 
-<img src = "![alt text](image.png)">
+<img src = "https://github.com/Royhtml/EmuFlash-V10/raw/main/repo/Roy.gif">
 
 ### Step 1: Install Python
 
