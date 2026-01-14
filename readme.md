@@ -16,12 +16,9 @@ A comprehensive guide on running Windows executable (.exe) files in Termux using
 
 </div>
 
+<img src="code/b2.png" width="100%"></td>
+
 <table>
-  <tr>
-    <td><img src="code/b1.png" width="100%"></td>
-    <td><img src="code/b2.png" width="100%"></td>
-  </tr>
-  <tr>
     <td><img src="code/b3.png" width="100%"></td>
     <td><img src="code/b4.png" width="100%"></td>
   </tr>
@@ -32,6 +29,8 @@ A comprehensive guide on running Windows executable (.exe) files in Termux using
 </table>
 
 ## 📋 Prerequisites | 前提条件
+
+<td><img src="code/b1.png" width="100%"></td>
 
 ### English
 - Termux installed from [F-Droid](https://f-droid.org/en/packages/com.termux/) (recommended) or Google Play
