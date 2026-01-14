@@ -1,0 +1,20 @@
+{
+    "system": {
+        "last_opened": "",
+        "total_games": 0,
+        "favorite_emulator": "FlashPlayeremuflash.exe",
+        "start_minimized": false,
+        "language": "english",
+        "tts_enabled": true
+    },
+    "Age_Of _War_2.swf": {
+        "category": "Arcade",
+        "rating": "5",
+        "play_count": 1,
+        "last_played": "2026-01-14 15:45:57",
+        "play_time": {
+            "2026-01-14": 41
+        },
+        "total_play_time": 41
+    }
+}

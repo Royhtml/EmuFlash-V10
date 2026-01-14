@@ -1,0 +1,32 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+emuflash/__init__.py
+emuflash/cli.py
+emuflash/gui.py
+emuflash.egg-info/PKG-INFO
+emuflash.egg-info/SOURCES.txt
+emuflash.egg-info/dependency_links.txt
+emuflash.egg-info/entry_points.txt
+emuflash.egg-info/requires.txt
+emuflash.egg-info/top_level.txt
+emuflash/code/b1.png
+emuflash/code/b2.png
+emuflash/code/b3.png
+emuflash/code/b4.png
+emuflash/code/b5.png
+emuflash/code/b6.png
+emuflash/flash_games/code/b1.png
+emuflash/flash_games/code/b2.png
+emuflash/flash_games/covers/Age_Of _War_2.png
+emuflash/flash_games/screenshots/Age_Of _War_2_20260114_125406.png
+emuflash/icon/icon.ico
+emuflash/icon/icon.jpg
+emuflash/icon/icon.png
+emuflash/output/msi/code/b1.png
+emuflash/output/msi/code/b2.png
+emuflash/output/msi/icon/icon.ico
+emuflash/output/msi/icon/icon.jpg
+emuflash/output/msi/icon/icon.png
+emuflash/repo/Roy.gif

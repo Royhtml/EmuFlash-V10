@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EmuFlash - Emulator Game Retro dengan 250 Games Full Patch</title>
     <meta name="google-site-verification" content="Xwop3g8_zyLcfc09fGrpc-M57S77AYmSGIbBjVnYBw0" />
+    <meta name="description" content="EmuFlash adalah aplikasi yang mendukung pengembangan flash games dengan 250 games full patch. Dengan fitur penggunaan yang lebih baik dan performa yang lebih optimal, pengguna dapat menikmati pengalaman gaming yang luar biasa dengan mudah.">
+    <link rel="icon" type="image/x-icon" href="icon/icon.png">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -23,11 +25,18 @@
             overflow-x: hidden;
         }
         
-        /* Animasi saat scroll */
+        /* Smooth scroll animation */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        /* Enhanced scroll animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                       transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .fade-in.visible {
@@ -37,8 +46,9 @@
         
         .slide-in-left {
             opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateX(-50px);
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), 
+                       transform 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .slide-in-left.visible {
@@ -48,13 +58,37 @@
         
         .slide-in-right {
             opacity: 0;
-            transform: translateX(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateX(50px);
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), 
+                       transform 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .slide-in-right.visible {
             opacity: 1;
             transform: translateX(0);
+        }
+        
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                       transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Gradient background */
@@ -64,20 +98,38 @@
         
         /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 12px;
         }
         
         ::-webkit-scrollbar-track {
             background: #0f172a;
+            border-radius: 10px;
         }
         
         ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            border: 2px solid #0f172a;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+        }
+        
+        /* Smooth fade-in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
         }
         
         /* Swiper custom styles */
@@ -94,6 +146,13 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: scale(0.95);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .swiper-slide-active {
+            transform: scale(1);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
         }
         
         .swiper-slide img {
@@ -101,49 +160,401 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .swiper-slide:hover img {
+            transform: scale(1.05);
         }
         
         /* Animasi floating */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(5px) rotate(-1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
         }
         
         .floating {
-            animation: float 5s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite;
         }
         
         /* Glow effect */
         .glow {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
         }
         
         /* Neon text effect */
         .neon-text {
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.7), 0 0 20px rgba(59, 130, 246, 0.5);
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.7), 
+                         0 0 20px rgba(59, 130, 246, 0.5),
+                         0 0 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Dokumentasi styling */
+        .docs-container {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .code-block {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .code-block:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+        }
+        
+        .code-block::before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            border-radius: 12px 0 0 12px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+        
+        .comparison-table {
+            min-width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            border: 1px solid #334155;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .comparison-table th {
+            background: rgba(59, 130, 246, 0.1);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+        
+        .comparison-table td:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Download button animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Download modal */
+        .download-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .download-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .download-modal-content {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .download-modal.active .download-modal-content {
+            transform: scale(1);
+        }
+        
+        /* Progress animation */
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+            background-size: 200% 100%;
+            animation: progress 1.5s ease-in-out forwards, 
+                       shimmer 2s infinite linear;
+            border-radius: 3px;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* FAQ styling */
+        .faq-item {
+            border-bottom: 1px solid #334155;
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: #3b82f6;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                       padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+        
+        /* Notification styling */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                       opacity 0.3s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        /* Card hover effects */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+            border-color: #3b82f6;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Loading animation */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading {
+            animation: spin 1s linear infinite;
+        }
+        
+        /* Parallax effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Staggered animation delays */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section entrance animation */
+        .section-entrance {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-entrance.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Button click animation */
+        .btn-click {
+            transition: all 0.2s ease;
+        }
+        
+        .btn-click:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
+    <!-- Download Modal -->
+    <div class="download-modal" id="downloadModal">
+        <div class="download-modal-content">
+            <div class="text-center">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-6 border border-blue-500/30">
+                    <i class="fas fa-download text-blue-400 text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4" id="downloadTitle">Mempersiapkan Download</h3>
+                <p class="text-gray-400 mb-6" id="downloadDesc">Download akan segera dimulai...</p>
+                
+                <div class="progress-bar mb-8" id="progressBar"></div>
+                
+                <div class="text-sm text-gray-400 space-y-3 mb-8">
+                    <p class="flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-green-500 mr-2"></i> 
+                        <span>File aman - Telah discan dengan antivirus</span>
+                    </p>
+                    <p class="flex items-center justify-center">
+                        <i class="fas fa-bolt text-yellow-500 mr-2"></i> 
+                        <span id="fileSize">Ukuran: Sedang memuat...</span>
+                    </p>
+                    <p class="flex items-center justify-center">
+                        <i class="fas fa-ad text-red-500 mr-2"></i> 
+                        <span>100% Bebas Iklan</span>
+                    </p>
+                </div>
+                
+                <div class="mt-8 flex space-x-4">
+                    <button onclick="cancelDownload()" class="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 btn-click">
+                        Batal
+                    </button>
+                    <button id="downloadLink" class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 btn-click">
+                        <i class="fas fa-download mr-2"></i> Download Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10  flex items-center justify-center">
-                    <img src = "icon/icon.png" alt = "icon" class = "w-10 h-10 bg-blue-900/30 rounded-xl flex items-center justify-center mb-1">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-gamepad text-white"></i>
                 </div>
-                <span class="text-xl font-bold text-white">Emu<span class="text-blue-400">Flash</span></span>
+                <span class="text-xl font-bold text-white">Emu<span class="gradient-text">Flash</span></span>
             </div>
             
             <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors">Home</a>
-                <a href="#features" class="text-gray-300 hover:text-blue-400 transition-colors">Fitur</a>
-                <a href="#games" class="text-gray-300 hover:text-blue-400 transition-colors">Game</a>
-                <a href="#download" class="text-gray-300 hover:text-blue-400 transition-colors">Download</a>
+                <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors hover:scale-105">Home</a>
+                <a href="#features" class="text-gray-300 hover:text-blue-400 transition-colors hover:scale-105">Fitur</a>
+                <a href="#games" class="text-gray-300 hover:text-blue-400 transition-colors hover:scale-105">Game</a>
+                <a href="#download" class="text-gray-300 hover:text-blue-400 transition-colors hover:scale-105">Download</a>
+                <a href="#documentation" class="text-gray-300 hover:text-blue-400 transition-colors hover:scale-105">Dokumentasi</a>
             </div>
             
-            <button class="md:hidden text-gray-300 hover:text-blue-400">
+            <button class="md:hidden text-gray-300 hover:text-blue-400 transition-transform hover:scale-110" id="mobileMenuButton">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
@@ -154,46 +565,61 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-12 md:mb-0 slide-in-left">
-                    <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-6">
-                        <span class="text-blue-400 font-medium">250+ Games Full Patch</span>
+                    <div class="inline-flex items-center px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-6 animate-fade-in-up">
+                        <span class="text-blue-400 font-medium">✨ 250+ Games Full Patch</span>
                     </div>
                     
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                         <span class="block">Emulator Game</span>
-                        <span class="text-blue-400 neon-text">Retro Lengkap</span>
+                        <span class="gradient-text">Retro Lengkap</span>
                     </h1>
                     
-                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg animate-fade-in-up" style="animation-delay: 0.2s;">
                         Nikmati kembali kenangan masa kecil dengan EmuFlash. Emulator retro yang powerful dengan 250 game klasik sudah termasuk full patch dan optimasi untuk pengalaman terbaik.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#download" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <button onclick="startDownload('windows')" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 pulse btn-click">
                             <i class="fas fa-download"></i>
                             <span>Download Sekarang</span>
+                        </button>
+                        <a href="#documentation" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 border border-gray-700 flex items-center justify-center space-x-2 transform hover:scale-105 btn-click">
+                            <i class="fas fa-book"></i>
+                            <span>Lihat Dokumentasi</span>
                         </a>
-                        <a href="#features" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 border border-gray-700 flex items-center justify-center space-x-2">
-                            <i class="fas fa-play-circle"></i>
-                            <span>Lihat Fitur</span>
-                        </a>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-3 gap-4 max-w-md">
+                        <div class="text-center stagger-item">
+                            <div class="text-2xl font-bold text-blue-400">250+</div>
+                            <div class="text-sm text-gray-400">Games</div>
+                        </div>
+                        <div class="text-center stagger-item" style="transition-delay: 0.1s;">
+                            <div class="text-2xl font-bold text-purple-400">100%</div>
+                            <div class="text-sm text-gray-400">No Ads</div>
+                        </div>
+                        <div class="text-center stagger-item" style="transition-delay: 0.2s;">
+                            <div class="text-2xl font-bold text-green-400">46 MB</div>
+                            <div class="text-sm text-gray-400">Size</div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="md:w-1/2 flex justify-center slide-in-right">
                     <div class="relative">
                         <!-- Main Hero Image -->
-                        <div class="w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden glow border-4 border-blue-900/30">
+                        <div class="w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden glow border-4 border-blue-900/30 hover-card">
                             <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
                                  alt="EmuFlash Emulator" class="w-full h-full object-cover">
                         </div>
                         
                         <!-- Floating game images -->
-                        <div class="absolute -top-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-2 border-blue-700/50 floating" style="animation-delay: 0.5s;">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 rounded-xl overflow-hidden border-2 border-blue-700/50 floating hover-card" style="animation-delay: 0.5s;">
                             <img src="https://images.unsplash.com/photo-1498736297812-3a08021f206f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmV0cm8lMjBnYW1pbmd8ZW58MHx8MHx8fDA%3D" 
                                  alt="Game Retro" class="w-full h-full object-cover">
                         </div>
                         
-                        <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-2 border-blue-700/50 floating" style="animation-delay: 1s;">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl overflow-hidden border-2 border-blue-700/50 floating hover-card" style="animation-delay: 1s;">
                             <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                                  alt="Game Retro" class="w-full h-full object-cover">
                         </div>
@@ -206,9 +632,9 @@
     <!-- Features Section -->
     <section id="features" class="py-16 bg-gray-900">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16 fade-in">
-                <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
-                    <span class="text-blue-400 font-medium">Fitur Unggulan</span>
+            <div class="text-center mb-16 section-entrance">
+                <div class="inline-flex items-center px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                    <span class="text-blue-400 font-medium">🚀 Fitur Unggulan</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Semua yang Anda Butuhkan dalam Satu Emulator</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">EmuFlash dirancang untuk memberikan pengalaman bermain game retro terbaik dengan fitur-fitur lengkap dan kemudahan penggunaan.</p>
@@ -216,8 +642,8 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 fade-in">
-                    <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover-card stagger-item">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-900/30 to-blue-600/30 rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-bolt text-blue-400 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Instalasi Mudah</h3>
@@ -225,18 +651,18 @@
                 </div>
                 
                 <!-- Feature 2 -->
-                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 fade-in">
-                    <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-gamepad text-blue-400 text-2xl"></i>
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover-card stagger-item" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-900/30 to-purple-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-gamepad text-purple-400 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">250 Game Full Patch</h3>
                     <p class="text-gray-400">Semua game sudah termasuk patch terbaru, traduksi, dan perbaikan bug. Siap dimainkan tanpa konfigurasi rumit.</p>
                 </div>
                 
                 <!-- Feature 3 -->
-                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 fade-in">
-                    <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-tools text-blue-400 text-2xl"></i>
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover-card stagger-item" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-900/30 to-green-600/30 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-green-400 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Fitur Lengkap</h3>
                     <p class="text-gray-400">Save state, fast forward, rewind, cheat code support, dan berbagai kustomisasi untuk pengalaman bermain optimal.</p>
@@ -244,13 +670,809 @@
             </div>
         </div>
     </section>
+
+        <!-- Documentation Section -->
+    <section id="documentation" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                    <span class="text-blue-400 font-medium">Dokumentasi Lengkap</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Panduan Lengkap EmuFlash</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Pelajari semua fitur dan cara penggunaan EmuFlash dengan panduan komprehensif ini.</p>
+            </div>
+
+            <div class="docs-container p-6 md:p-8 mb-12 fade-in">
+                <div align="center">
+                    <img src='icon/icon.png' alt='EmuFlash Icon' class="w-32 h-32 mx-auto mb-6">
+                </div>
+
+                <div align="center" class="mb-8">
+                    <h1 class="text-3xl font-bold mb-4">🚀 EmuFlash - Emulator Game Retro</h1>
+                    <div class="flex flex-wrap justify-center gap-2 mb-4">
+                        <span class="badge bg-blue-900/30 text-blue-400 border border-blue-700/50">
+                            <i class="fab fa-windows mr-1"></i> Windows
+                        </span>
+                        <span class="badge bg-green-900/30 text-green-400 border border-green-700/50">
+                            <i class="fab fa-android mr-1"></i> Android
+                        </span>
+                        <span class="badge bg-red-900/30 text-red-400 border border-red-700/50">
+                            <i class="fas fa-ad mr-1"></i> No Ads
+                        </span>
+                        <span class="badge bg-purple-900/30 text-purple-400 border border-purple-700/50">
+                            <i class="fas fa-gamepad mr-1"></i> 250+ Games
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 📋 Prerequisites Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-400 border-b border-blue-800 pb-2">📋 Prerequisites | Persyaratan Sistem</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">English</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>Termux installed from F-Droid (recommended) or Google Play</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>Stable internet connection</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>At least 500MB free storage</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>Android 7.0 or higher</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">中文 (Chinese)</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>从 F-Droid (推荐) 或 Google Play 安装 Termux</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>稳定的网络连接</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>至少 500MB 可用存储空间</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                    <span>Android 7.0 或更高版本</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📥 Installation Methods Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-800 pb-2">📥 Installation Methods | Metode Instalasi</h2>
+                    
+                    <div class="space-y-8">
+                        <!-- Method 1 -->
+                        <div class="bg-gray-800/30 p-6 rounded-lg border border-gray-700">
+                            <h3 class="text-xl font-bold mb-4 text-white">Method 1: Using Wine (Recommended) | Metode 1: Menggunakan Wine (Direkomendasikan)</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold text-gray-300 mb-3">English</h4>
+                                    <div class="code-block mb-4">
+                                        <code class="text-green-400">pkg update && pkg upgrade -y</code>
+                                    </div>
+                                    <div class="code-block mb-4">
+                                        <code class="text-green-400">pkg install -y git wget proot-distro</code>
+                                    </div>
+                                    <div class="code-block">
+                                        <code class="text-green-400">proot-distro install ubuntu</code>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold text-gray-300 mb-3">中文 (Chinese)</h4>
+                                    <div class="code-block mb-4">
+                                        <code class="text-green-400">pkg update && pkg upgrade -y</code>
+                                    </div>
+                                    <div class="code-block mb-4">
+                                        <code class="text-green-400">pkg install -y git wget proot-distro</code>
+                                    </div>
+                                    <div class="code-block">
+                                        <code class="text-green-400">proot-distro install ubuntu</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Method 2 -->
+                        <div class="bg-gray-800/30 p-6 rounded-lg border border-gray-700">
+                            <h3 class="text-xl font-bold mb-4 text-white">Method 2: Using Box86/Box64 | Metode 2: Menggunakan Box86/Box64</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold text-gray-300 mb-3">For ARM devices</h4>
+                                    <div class="code-block mb-4">
+                                        <code class="text-green-400">pkg install -y python git cmake</code>
+                                    </div>
+                                    <div class="code-block">
+                                        <code class="text-green-400">git clone https://github.com/ptitSeb/box86</code>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold text-gray-300 mb-3">适用于 ARM 设备</h4>
+                                    <div class="code-block mb-4">
+                                        <code class="text-green-400">pkg install -y python git cmake</code>
+                                    </div>
+                                    <div class="code-block">
+                                        <code class="text-green-400">git clone https://github.com/ptitSeb/box86</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🚀 Running .exe Files Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-800 pb-2">🚀 Running .exe Files | Menjalankan File .exe</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800/30 p-6 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-white mb-4">Basic Execution</h4>
+                            <div class="code-block mb-4">
+                                <code class="text-green-400">cd /path/to/your/file</code>
+                            </div>
+                            <div class="code-block mb-4">
+                                <code class="text-green-400">wine filename.exe</code>
+                            </div>
+                            <div class="code-block">
+                                <code class="text-green-400">pkg install x11-repo -y</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/30 p-6 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-white mb-4">基本执行方法</h4>
+                            <div class="code-block mb-4">
+                                <code class="text-green-400">cd /path/to/your/file</code>
+                            </div>
+                            <div class="code-block mb-4">
+                                <code class="text-green-400">wine filename.exe</code>
+                            </div>
+                            <div class="code-block">
+                                <code class="text-green-400">pkg install x11-repo -y</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎮 Supported Systems Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-800 pb-2">🎮 Supported Systems | Sistem yang Didukung</h2>
+                    
+                    <div class="table-container">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>System / Sistem</th>
+                                    <th>Status / Status</th>
+                                    <th>Recommended Settings / Pengaturan Direkomendasikan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>NES / FC</td>
+                                    <td><span class="text-green-400">✅ Excellent</span></td>
+                                    <td>Default</td>
+                                </tr>
+                                <tr>
+                                    <td>SNES / SFC</td>
+                                    <td><span class="text-green-400">✅ Excellent</span></td>
+                                    <td>xBRZ 2x Filter</td>
+                                </tr>
+                                <tr>
+                                    <td>Game Boy / GBC</td>
+                                    <td><span class="text-green-400">✅ Excellent</span></td>
+                                    <td>LCD Filter</td>
+                                </tr>
+                                <tr>
+                                    <td>Game Boy Advance</td>
+                                    <td><span class="text-green-400">✅ Excellent</span></td>
+                                    <td>2x Resolution</td>
+                                </tr>
+                                <tr>
+                                    <td>PlayStation 1</td>
+                                    <td><span class="text-green-400">✅ Great</span></td>
+                                    <td>Enhanced Resolution</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Size Comparison Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-800 pb-2">⚡ Size Comparison - Smallest Ever</h2>
+                    
+                    <div class="table-container">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Emulator</th>
+                                    <th>Windows Size</th>
+                                    <th>Android Size</th>
+                                    <th>Has Ads?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>EmuFlash 10.0</strong></td>
+                                    <td><strong class="text-green-400">5 MB</strong></td>
+                                    <td><strong class="text-green-400">8 MB</strong></td>
+                                    <td><span class="text-red-400">❌ NO</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Flash Player Pro</td>
+                                    <td>25 MB</td>
+                                    <td>15 MB</td>
+                                    <td><span class="text-green-400">✅ YES</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Super Flash Game</td>
+                                    <td>50 MB</td>
+                                    <td>20 MB</td>
+                                    <td><span class="text-green-400">✅ YES</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Flash Game Hub</td>
+                                    <td>40 MB</td>
+                                    <td>18 MB</td>
+                                    <td><span class="text-green-400">✅ YES</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- System Requirements -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-800 pb-2">💾 System Requirements | Persyaratan Sistem</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800/30 p-6 rounded-lg border border-gray-700">
+                            <h3 class="text-xl font-bold mb-4 text-white">Windows Version:</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-desktop text-blue-400 mr-3"></i>
+                                    <span>OS: Windows XP to Windows 11</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-memory text-blue-400 mr-3"></i>
+                                    <span>RAM: 64 MB minimum</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-hdd text-blue-400 mr-3"></i>
+                                    <span>Storage: 10 MB free</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-microchip text-blue-400 mr-3"></i>
+                                    <span>CPU: Pentium II 300 MHz</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-800/30 p-6 rounded-lg border border-gray-700">
+                            <h3 class="text-xl font-bold mb-4 text-white">Android Version:</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fab fa-android text-green-400 mr-3"></i>
+                                    <span>OS: Android 4.0 to Android 14</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-memory text-green-400 mr-3"></i>
+                                    <span>RAM: 128 MB minimum</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-hdd text-green-400 mr-3"></i>
+                                    <span>Storage: 20 MB free</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-mobile-alt text-green-400 mr-3"></i>
+                                    <span>Screen: 320x480 minimum</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-800 pb-2">❓ FAQ | Pertanyaan Umum</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Q: Really no ads? | Benar-benar tidak ada iklan?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-300 mt-2">A: Yes! 100% ad-free forever. | Ya! 100% bebas iklan selamanya.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Q: Works on Windows XP? | Berjalan di Windows XP?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-300 mt-2">A: Yes! Perfect for old PCs. | Ya! Sempurna untuk PC lama.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Q: Android version free? | Versi Android gratis?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-300 mt-2">A: Yes! Same no-ads version. | Ya! Versi yang sama tanpa iklan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Note -->
+                <div class="text-center pt-8 border-t border-gray-700">
+                    <div class="flex flex-wrap justify-center gap-4 mb-6">
+                        <span class="badge bg-gray-800 text-gray-300 border border-gray-700">
+                            <i class="fab fa-termux mr-1"></i> Termux
+                        </span>
+                        <span class="badge bg-amber-900/30 text-amber-400 border border-amber-700/50">
+                            <i class="fas fa-wine-glass-alt mr-1"></i> Wine
+                        </span>
+                        <span class="badge bg-green-900/30 text-green-400 border border-green-700/50">
+                            <i class="fab fa-android mr-1"></i> Android
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4">Made with ❤️ for Termux community</h3>
+                    <p class="text-gray-400">为 Termux 社区用心制作</p>
+                    
+                    <div class="mt-8">
+                        <button onclick="startDownload('windows')" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 mx-auto">
+                            <i class="fas fa-download"></i>
+                            <span>Download EmuFlash Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="cdn.jsdelivr.net"></script>
+
     
+<!-- Dokumentasi Section - Tetap sama, hanya tambah class animation -->
+<section id="documentation" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16 section-entrance">
+            <div class="inline-flex items-center px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                <span class="text-blue-400 font-medium">📚 Dokumentasi Lengkap</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Panduan Lengkap EmuFlash</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Pelajari semua fitur dan cara penggunaan EmuFlash dengan panduan komprehensif ini.</p>
+        </div>
+
+        <div class="docs-container p-6 md:p-8 mb-12 zoom-in">
+            <div align="center">
+                <img src='icon/icon.png' alt='EmuFlash Icon' class="w-32 h-32 mx-auto mb-6">
+            </div>
+
+            <div align="center" class="mb-8">
+                <h1 class="text-3xl font-bold mb-4">📄 Panduan Lengkap EmuFlash</h1>
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="badge bg-blue-900/30 text-blue-400 border border-blue-700/50">
+                        <i class="fab fa-windows mr-1"></i> Windows
+                    </span>
+                    <span class="badge bg-green-900/30 text-green-400 border border-green-700/50">
+                        <i class="fab fa-android mr-1"></i> Android
+                    </span>
+                    <span class="badge bg-red-900/30 text-red-400 border border-red-700/50">
+                        <i class="fas fa-ad mr-1"></i> No Ads
+                    </span>
+                    <span class="badge bg-purple-900/30 text-purple-400 border border-purple-700/50">
+                        <i class="fas fa-gamepad mr-1"></i> 250+ Games
+                    </span>
+                </div>
+            </div>
+
+            <!-- README.md Section -->
+            <div class="mt-12 readme-section slide-up">
+                <div class="flex items-center justify-between mb-6 border-b border-gray-700 pb-4">
+                    <h3 class="text-2xl font-bold flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m4.2 14v-1.5l2.8.8 2.8-.8V16c0 .6-.6 1.2-1.3 1.2h-3c-.7 0-1.3-.6-1.3-1.2m3.8-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5m-3 0c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M7 12c-.8 0-1.5.7-1.5 1.5S6.2 15 7 15s1.5-.7 1.5-1.5S7.8 12 7 12z"/>
+                        </svg>
+                        README.md
+                    </h3>
+                    <div class="flex gap-2">
+                        <button class="copy-btn px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm transition-all duration-300 flex items-center gap-2 border border-gray-700">
+                            <i class="far fa-copy"></i> Salin Kode
+                        </button>
+                        <button class="toggle-btn px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm transition-all duration-300 flex items-center gap-2">
+                            <i class="fas fa-eye"></i> Lihat Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- README Content Tabs -->
+                <div class="mb-6">
+                    <div class="border-b border-gray-700">
+                        <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                            <button class="tab-btn active border-b-2 border-blue-500 py-2 px-1 text-sm font-medium text-blue-400" data-tab="overview">
+                                📋 Overview
+                            </button>
+                            <button class="tab-btn border-b-2 border-transparent py-2 px-1 text-sm font-medium text-gray-400 hover:text-gray-300" data-tab="features">
+                                ⭐ Features
+                            </button>
+                            <button class="tab-btn border-b-2 border-transparent py-2 px-1 text-sm font-medium text-gray-400 hover:text-gray-300" data-tab="installation">
+                                📦 Installation
+                            </button>
+                            <button class="tab-btn border-b-2 border-transparent py-2 px-1 text-sm font-medium text-gray-400 hover:text-gray-300" data-tab="usage">
+                                🚀 Usage
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- README Content -->
+                <div class="bg-gray-800/50 rounded-xl border border-gray-700 p-6">
+                    <!-- Overview Tab -->
+                    <div id="overview-tab" class="tab-content active">
+                        <div class="prose prose-invert max-w-none">
+                            <h4 class="text-xl font-bold mb-4 text-blue-400">🎮 EmuFlash - Emulator All in One</h4>
+                            <p class="mb-4">EmuFlash adalah aplikasi emulator lengkap yang mendukung berbagai konsol retro dalam satu platform. Dengan antarmuka yang user-friendly dan performa optimal, pengguna dapat menikmati pengalaman gaming klasik dengan mudah.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                                <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+                                    <div class="text-blue-400 text-lg mb-2">⚡ Performa Tinggi</div>
+                                    <p class="text-sm text-gray-300">Optimasi untuk perangkat low-end hingga high-end</p>
+                                </div>
+                                <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+                                    <div class="text-green-400 text-lg mb-2">🎯 User-Friendly</div>
+                                    <p class="text-sm text-gray-300">Antarmuka intuitif untuk semua kalangan</p>
+                                </div>
+                                <div class="bg-gray-900/50 p-4 rounded-lg border border-gray-700">
+                                    <div class="text-purple-400 text-lg mb-2">📱 Multi-Platform</div>
+                                    <p class="text-sm text-gray-300">Tersedia untuk Windows dan Android</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features Tab -->
+                    <div id="features-tab" class="tab-content hidden">
+                        <div class="prose prose-invert max-w-none">
+                            <h4 class="text-xl font-bold mb-4 text-green-400">✨ Fitur Utama</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span><strong>250+ Game Pre-installed</strong> - Koleksi game lengkap berbagai konsol</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span><strong>Multi-Emulator Support</strong> - NES, SNES, GBA, PS1, NDS, dan lainnya</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span><strong>Save State & Load State</strong> - Simpan progres kapan saja</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span><strong>Cheat Code Support</strong> - Dukungan kode cheat lengkap</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span><strong>Controller Support</strong> - Kompatibel dengan berbagai gamepad</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-400 mr-2">✓</span>
+                                    <span><strong>No Ads & Free</strong> - Pengalaman gaming tanpa gangguan</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Installation Tab -->
+                    <div id="installation-tab" class="tab-content hidden">
+                        <div class="prose prose-invert max-w-none">
+                            <h4 class="text-xl font-bold mb-4 text-yellow-400">📦 Instalasi</h4>
+                            
+                            <h5 class="font-bold mt-4 mb-2">Windows:</h5>
+                            <pre class="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm mb-4"><code>1. Download installer dari website resmi
+2. Jalakan file setup.exe
+3. Ikuti panduan instalasi
+4. Tunggu proses selesai
+5. EmuFlash siap digunakan!</code></pre>
+
+                            <h5 class="font-bold mt-4 mb-2">Android:</h5>
+                            <pre class="bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm"><code>1. Download APK dari situs resmi
+2. Aktifkan "Install from unknown sources"
+3. Install APK file
+4. Buka aplikasi dan izinkan permission
+5. Mulai mainkan game!</code></pre>
+
+                            <div class="mt-4 p-4 bg-blue-900/20 rounded-lg border border-blue-800">
+                                <p class="text-sm"><strong>💡 Tips:</strong> Pastikan perangkat memenuhi spesifikasi minimum untuk pengalaman terbaik.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Usage Tab -->
+                    <div id="usage-tab" class="tab-content hidden">
+                        <div class="prose prose-invert max-w-none">
+                            <h4 class="text-xl font-bold mb-4 text-purple-400">🚀 Panduan Penggunaan</h4>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <h5 class="font-bold mb-2">🎮 Menjalankan Game</h5>
+                                    <p class="text-sm">Pilih konsol → Pilih game → Klik Play</p>
+                                </div>
+                                
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <h5 class="font-bold mb-2">💾 Save/Load State</h5>
+                                    <p class="text-sm">Tekan F1 untuk save, F2 untuk load (Windows) atau gunakan menu di aplikasi</p>
+                                </div>
+                                
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <h5 class="font-bold mb-2">🎛️ Konfigurasi Controller</h5>
+                                    <p class="text-sm">Settings → Controller → Pilih dan konfigurasi gamepad</p>
+                                </div>
+                                
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <h5 class="font-bold mb-2">⚙️ Pengaturan Grafik</h5>
+                                    <p class="text-sm">Settings → Graphics → Sesuaikan resolusi dan filter</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- README Code Snippet -->
+                <div class="mt-6 bg-gray-900 rounded-xl border border-gray-700 overflow-hidden">
+                    <div class="flex items-center justify-between bg-gray-800 px-4 py-2">
+                        <span class="text-sm font-mono text-gray-300">README.md</span>
+                        <button class="copy-code-btn px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs transition-colors flex items-center gap-1">
+                            <i class="far fa-copy text-xs"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <pre class="p-4 overflow-x-auto text-sm text-gray-300"><code class="markdown">
+
+## ✨ Features
+- 🎯 250+ Pre-installed Games
+- 🔧 Multi-Emulator Support
+- 💾 Save/Load State
+- 🎮 Controller Support
+- 📱 Cross-Platform (Windows & Android)
+- 🚫 No Ads, Completely Free
+
+## 📦 Installation
+### Windows
+1. Download installer from official website
+2. Run setup.exe
+3. Follow installation wizard
+4. Launch EmuFlash
+
+### Android
+1. Download APK file
+2. Enable "Unknown Sources"
+3. Install APK
+4. Open and enjoy!
+
+## 🚀 Quick Start
+1. Select your preferred console
+2. Choose a game from library
+3. Configure controls (optional)
+4. Start playing!
+
+## ⚙️ System Requirements
+- **Windows**: Windows 7 or later, 2GB RAM
+- **Android**: Android 5.0+, 1GB RAM
+- **Storage**: 500MB free space
+
+## 🤝 Contributing
+Found a bug? Have suggestions? Feel free to open an issue or pull request.
+
+## 📄 License
+MIT License - Free for personal and educational use.</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tambahkan script untuk interaktivitas -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab Switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+            
+            // Update active tab button
+            tabBtns.forEach(b => {
+                b.classList.remove('active', 'border-blue-500', 'text-blue-400');
+                b.classList.add('border-transparent', 'text-gray-400');
+            });
+            btn.classList.add('active', 'border-blue-500', 'text-blue-400');
+            btn.classList.remove('border-transparent', 'text-gray-400');
+            
+            // Show active tab content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                content.classList.add('hidden');
+            });
+            document.getElementById(`${tabId}-tab`).classList.remove('hidden');
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+        });
+    });
+    
+    // Copy Code Button
+    const copyBtns = document.querySelectorAll('.copy-code-btn, .copy-btn');
+    copyBtns.forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const codeElement = document.querySelector('code.markdown');
+            const code = codeElement.textContent;
+            
+            try {
+                await navigator.clipboard.writeText(code);
+                
+                // Visual feedback
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.classList.add('bg-green-600');
+                btn.classList.remove('bg-gray-700', 'hover:bg-gray-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-600');
+                    if(btn.classList.contains('copy-code-btn')) {
+                        btn.classList.add('bg-gray-700', 'hover:bg-gray-600');
+                    }
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        });
+    });
+    
+    // Toggle Preview Button
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const readmeCode = document.querySelector('pre');
+    
+    toggleBtn.addEventListener('click', () => {
+        readmeCode.classList.toggle('hidden');
+        
+        if (readmeCode.classList.contains('hidden')) {
+            toggleBtn.innerHTML = '<i class="fas fa-eye"></i> Show Code';
+        } else {
+            toggleBtn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Code';
+        }
+    });
+});
+</script>
+
+<!-- Tambahkan style untuk animasi -->
+<style>
+.section-entrance {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.zoom-in {
+    animation: zoomIn 0.6s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.prose ul li {
+    margin-bottom: 0.5rem;
+}
+
+.prose pre {
+    background: #1a202c;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.prose code {
+    color: #e2e8f0;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Hover effects */
+.toggle-btn:hover, .copy-btn:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+</style>
+
     <!-- Game Gallery Slider -->
     <section id="games" class="py-16 bg-gray-900">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in">
-                <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
-                    <span class="text-blue-400 font-medium">Koleksi Game</span>
+            <div class="text-center mb-12 section-entrance">
+                <div class="inline-flex items-center px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                    <span class="text-blue-400 font-medium">🎮 Koleksi Game</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">250+ Game Retro Terbaik</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Jelajahi koleksi lengkap game-game retro terbaik yang sudah dipatch dengan berbagai perbaikan, traduksi, dan enhancement.</p>
@@ -260,7 +1482,7 @@
             <div class="swiper mySwiper fade-in">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
-                    <div class="swiper-slide bg-gray-800">
+                    <div class="swiper-slide bg-gray-800 hover-card">
                         <div class="h-64 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
                                  alt="Game Boy Advance Games" class="w-full h-full object-cover">
@@ -268,7 +1490,7 @@
                         <div class="p-6">
                             <div class="flex justify-between items-center mb-4">
                                 <h3 class="text-xl font-bold">Game Boy Advance</h3>
-                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">65 Game</span>
+                                <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium px-3 py-1 rounded-full">65 Game</span>
                             </div>
                             <ul class="text-gray-400 space-y-2">
                                 <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Pokémon FireRed</li>
@@ -279,7 +1501,7 @@
                     </div>
                     
                     <!-- Slide 2 -->
-                    <div class="swiper-slide bg-gray-800">
+                    <div class="swiper-slide bg-gray-800 hover-card">
                         <div class="h-64 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
                                  alt="Super Nintendo Games" class="w-full h-full object-cover">
@@ -287,7 +1509,7 @@
                         <div class="p-6">
                             <div class="flex justify-between items-center mb-4">
                                 <h3 class="text-xl font-bold">Super Nintendo</h3>
-                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">55 Game</span>
+                                <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium px-3 py-1 rounded-full">55 Game</span>
                             </div>
                             <ul class="text-gray-400 space-y-2">
                                 <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Chrono Trigger</li>
@@ -298,7 +1520,7 @@
                     </div>
                     
                     <!-- Slide 3 -->
-                    <div class="swiper-slide bg-gray-800">
+                    <div class="swiper-slide bg-gray-800 hover-card">
                         <div class="h-64 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1171&q=80" 
                                  alt="PlayStation Games" class="w-full h-full object-cover">
@@ -306,50 +1528,12 @@
                         <div class="p-6">
                             <div class="flex justify-between items-center mb-4">
                                 <h3 class="text-xl font-bold">PlayStation 1</h3>
-                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">30 Game</span>
+                                <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium px-3 py-1 rounded-full">30 Game</span>
                             </div>
                             <ul class="text-gray-400 space-y-2">
                                 <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Final Fantasy VII</li>
                                 <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Metal Gear Solid</li>
                                 <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Castlevania: SotN</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 4 -->
-                    <div class="swiper-slide bg-gray-800">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                                 alt="Sega Genesis Games" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="text-xl font-bold">Sega Genesis</h3>
-                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">40 Game</span>
-                            </div>
-                            <ul class="text-gray-400 space-y-2">
-                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Sonic the Hedgehog 2</li>
-                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Streets of Rage 2</li>
-                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Phantasy Star IV</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 5 -->
-                    <div class="swiper-slide bg-gray-800">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1332&q=80" 
-                                 alt="Nintendo NES Games" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="text-xl font-bold">Nintendo NES</h3>
-                                <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">45 Game</span>
-                            </div>
-                            <ul class="text-gray-400 space-y-2">
-                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Super Mario Bros. 3</li>
-                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> The Legend of Zelda</li>
-                                <li class="flex items-center"><i class="fas fa-circle text-blue-400 text-xs mr-2"></i> Castlevania</li>
                             </ul>
                         </div>
                     </div>
@@ -362,9 +1546,9 @@
     <!-- Download Section -->
     <section id="download" class="py-16 bg-gray-900">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 fade-in">
-                <div class="inline-block px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
-                    <span class="text-blue-400 font-medium">Download</span>
+            <div class="text-center mb-12 section-entrance">
+                <div class="inline-flex items-center px-4 py-2 bg-blue-900/30 rounded-full border border-blue-700/50 mb-4">
+                    <span class="text-blue-400 font-medium">💾 Download</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Download EmuFlash Sekarang</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Pilih versi yang sesuai dengan kebutuhan Anda. Gratis untuk digunakan dan selalu diperbarui.</p>
@@ -372,9 +1556,9 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Windows Download Card -->
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 hover-card stagger-item">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-900/30 to-blue-600/30 rounded-xl flex items-center justify-center mr-6">
                             <i class="fab fa-windows text-blue-400 text-3xl"></i>
                         </div>
                         <div>
@@ -394,33 +1578,68 @@
                             <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Windows 10/11</li>
                             <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> 4GB RAM</li>
                             <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> 2GB ruang kosong</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> DirectX 11 compatible graphics</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Tinggal mainkan</li>
                         </ul>
                     </div>
                     
                     <div class="flex flex-col sm:flex-row items-center justify-between">
                         <div>
-                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 11 January 2026</p>
-                            <p class="text-white font-bold">Ukuran: 1.7 GB</p>
+                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 12 January 2026</p>
+                            <p class="text-white font-bold">Ukuran: 45 MB</p>
                         </div>
-                        <button class="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                        <button onclick="startDownload('windows')" class="mt-4 sm:mt-0 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 btn-click">
                             <i class="fas fa-download"></i>
                             <span>Download for Windows</span>
                         </button>
                     </div>
                 </div>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-                <!-- Windows Download Card -->
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
+                
+                <!-- Android Download Card -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 hover-card stagger-item" style="transition-delay: 0.1s;">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
-                            <i class="fa-solid fa-download text-blue-400 text-3xl"></i>
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-900/30 to-green-600/30 rounded-xl flex items-center justify-center mr-6">
+                            <i class="fa-solid fa-mobile text-green-400 text-3xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Download EmuFlash</h3>
-                            <p class="text-gray-400">Installer lengkap untuk Windows 10/11</p>
+                            <h3 class="text-2xl font-bold">Aplikasi Mobile</h3>
+                            <p class="text-gray-400">Aplikasi lengkap untuk Android dan iOS</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6">Installer lengkap untuk Android dan iOS. Tidak memerlukan dependensi tambahan tinggal mainkan saja.</p>
+                    
+                    <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+                        <h4 class="font-bold text-white mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                            Sistem Requirement
+                        </h4>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Tanpa iklan</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Download Cepat</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Full Package</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 12 January 2026</p>
+                            <p class="text-white font-bold">Ukuran: 56 MB</p>
+                        </div>
+                        <button onclick="startDownload('android')" class="mt-4 sm:mt-0 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 btn-click">
+                            <i class="fas fa-download"></i>
+                            <span>Download for Mobile</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Games Download Card -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 hover-card stagger-item" style="transition-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-900/30 to-purple-600/30 rounded-xl flex items-center justify-center mr-6">
+                            <i class="fa-solid fa-gamepad text-purple-400 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Download Games Collection</h3>
+                            <p class="text-gray-400">Koleksi lengkap 250+ game retro</p>
                         </div>
                     </div>
                     
@@ -435,68 +1654,26 @@
                             <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Tanpa iklan</li>
                             <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Download Cepat</li>
                             <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Full Package</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Semuah jenis platform</li>
                         </ul>
                     </div>
                     
                     <div class="flex flex-col sm:flex-row items-center justify-between">
                         <div>
-                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 11 January 2026</p>
+                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 12 January 2026</p>
                             <p class="text-white font-bold">Ukuran: 1.7 GB</p>
                         </div>
-                        <button class="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                        <button onclick="startDownload('games')" class="mt-4 sm:mt-0 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 btn-click">
                             <i class="fas fa-download"></i>
-                            <span>Download for Games</span>
+                            <span>Download Games Collection</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Windows Download Card -->
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
-                            <i class="fa-solid fa-mobile text-blue-400 text-3xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold">Aplikasi Mobile</h3>
-                            <p class="text-gray-400">Aplikasi lengkap untuk Android dan iOS</p>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-300 mb-6">install lengkap untuk Android dan iOS. Tidak memerlukan dependensi tambahan tinggal mainkan saja.</p>
-                    
-                    <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-                        <h4 class="font-bold text-white mb-2 flex items-center">
-                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
-                            Sistem Requirement
-                        </h4>
-                        <ul class="text-gray-400 text-sm space-y-1">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Tanpa iklan</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Download Cepat</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Full Package</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Semuah jenis platform</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> Ringan</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 text-xs mr-2"></i> support all Games</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row items-center justify-between">
-                        <div>
-                            <p class="text-gray-400 text-sm">Versi 10.0.0 • Terakhir diperbarui: 11 January 2026</p>
-                            <p class="text-white font-bold">Ukuran: 1.7 GB</p>
-                        </div>
-                        <button class="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
-                            <i class="fas fa-download"></i>
-                            <span>Download for Mobile</span>
-                        </button>
-                    </div>
-                </div>
-                
                 <!-- PyPI Download Card -->
-                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 fade-in">
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-gray-700 hover-card stagger-item" style="transition-delay: 0.3s;">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-900/30 rounded-xl flex items-center justify-center mr-6">
-                            <i class="fab fa-python text-blue-400 text-3xl"></i>
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-900/30 to-yellow-600/30 rounded-xl flex items-center justify-center mr-6">
+                            <i class="fab fa-python text-yellow-400 text-3xl"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold">Versi PyPI</h3>
@@ -519,10 +1696,10 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row items-center justify-between">
-                        <div class="bg-gray-900 p-4 rounded-lg font-mono text-sm">
+                        <div class="bg-gray-900 p-4 rounded-lg font-mono text-sm code-block">
                             <code class="text-green-400">pip install emuflash</code>
                         </div>
-                        <button class="mt-4 sm:mt-0 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                        <button onclick="startDownload('pypi')" class="mt-4 sm:mt-0 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 btn-click">
                             <i class="fas fa-terminal"></i>
                             <span>Instal via pip</span>
                         </button>
@@ -536,33 +1713,33 @@
     <footer class="bg-gray-900 border-t border-gray-800 py-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 flex items-center justify-center">
-                            <img src = "icon/icon.png" alt = "icon" class = "w-10 h-10 bg-blue-900/30 rounded-xl flex items-center justify-center mb-1">
+                <div class="mb-8 md:mb-0 slide-in-left">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-gamepad text-white"></i>
                         </div>
-                        <span class="text-xl font-bold text-white">Emu<span class="text-blue-400">Flash</span></span>
+                        <span class="text-xl font-bold text-white">Emu<span class="gradient-text">Flash</span></span>
                     </div>
                     <p class="text-gray-400">Emulator Retro dengan 250 Game Full Patch</p>
                 </div>
                 
-                <div class="text-center md:text-right">
+                <div class="text-center md:text-right slide-in-right">
                     <p class="text-gray-400 mb-4">Website ini hanya untuk tujuan demonstrasi. EmuFlash adalah proyek fiktif untuk keperluan contoh desain web.</p>
                     <div class="flex space-x-4 justify-center md:justify-end">
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
                             <i class="fab fa-python text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
                             <i class="fab fa-windows text-xl"></i>
                         </a>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm fade-in">
                 <p>EmuFlash &copy; 2023 - Emulator Retro dengan 250 Game Full Patch. Semua hak cipta game tetap milik pemilik masing-masing.</p>
             </div>
         </div>
@@ -571,105 +1748,194 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     
-    <script>
-        // Initialize Swiper
-        const swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 20,
-                stretch: 0,
-                depth: 200,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
-        });
+<script>
+// Initialize Swiper
+const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: true,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+    on: {
+        init: function() {
+            // Animate slides on load
+            this.slides.forEach((slide, index) => {
+                slide.style.opacity = "0";
+                slide.style.transform = "translateY(30px)";
+                setTimeout(() => {
+                    slide.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                    slide.style.opacity = "1";
+                    slide.style.transform = "translateY(0)";
+                }, index * 100);
+            });
+        }
+    }
+});
+
+// Enhanced scroll animation
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Staggered animation for child elements
+            if (entry.target.classList.contains('stagger-container')) {
+                const staggerItems = entry.target.querySelectorAll('.stagger-item');
+                staggerItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 150);
+                });
+            }
+        }
+    });
+}, observerOptions);
+
+// Observe elements for scroll animations
+document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in, .section-entrance, .stagger-item').forEach(el => {
+    scrollObserver.observe(el);
+});
+
+// Stagger animation for elements with delay
+document.querySelectorAll('.stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5').forEach(el => {
+    scrollObserver.observe(el);
+});
+
+// Smooth scrolling for navigation links with animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
         
-        // Scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            // Smooth scroll with easing
+            const startPosition = window.pageYOffset;
+            const targetPosition = targetElement.offsetTop - 80;
+            const distance = targetPosition - startPosition;
+            const duration = 1000;
+            let start = null;
+            
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const percentage = Math.min(progress / duration, 1);
+                
+                // Easing function (easeInOutCubic)
+                const easeInOutCubic = t => t<0.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1;
+                const easedPercentage = easeInOutCubic(percentage);
+                
+                window.scrollTo(0, startPosition + (distance * easedPercentage));
+                
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+            
+            window.requestAnimationFrame(step);
+        }
+        
+        // Close mobile menu if open
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenu) {
+            mobileMenu.remove();
+        }
+    });
+});
+
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        const navLinks = document.createElement('div');
+        navLinks.className = 'fixed top-16 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 p-4 z-40 md:hidden mobile-menu';
+        navLinks.innerHTML = `
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors py-3 text-center transform hover:scale-105">Home</a>
+                <a href="#features" class="text-gray-300 hover:text-blue-400 transition-colors py-3 text-center transform hover:scale-105">Fitur</a>
+                <a href="#games" class="text-gray-300 hover:text-blue-400 transition-colors py-3 text-center transform hover:scale-105">Game</a>
+                <a href="#download" class="text-gray-300 hover:text-blue-400 transition-colors py-3 text-center transform hover:scale-105">Download</a>
+                <a href="#documentation" class="text-gray-300 hover:text-blue-400 transition-colors py-3 text-center transform hover:scale-105">Dokumentasi</a>
+            </div>
+        `;
+        
+        // Animate in
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(-20px)';
+        document.body.appendChild(navLinks);
+        
+        setTimeout(() => {
+            navLinks.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            navLinks.style.opacity = '1';
+            navLinks.style.transform = 'translateY(0)';
+        }, 10);
+        
+        // Close menu when clicking outside
+        const closeMenuHandler = function(e) {
+            if (!navLinks.contains(e.target) && e.target !== mobileMenuButton) {
+                navLinks.style.opacity = '0';
+                navLinks.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    if (navLinks.parentNode) {
+                        navLinks.remove();
+                    }
+                }, 300);
+                document.removeEventListener('click', closeMenuHandler);
+            }
         };
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+        setTimeout(() => {
+            document.addEventListener('click', closeMenuHandler);
+        }, 10);
         
-        // Observe elements for scroll animations
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Button click effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const downloadButtons = document.querySelectorAll('button');
-            
-            downloadButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    if (this.textContent.includes('Download') || this.textContent.includes('Instal')) {
-                        e.preventDefault();
-                        
-                        // Animation on click
-                        this.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            this.style.transform = '';
-                        }, 200);
-                        
-                        // Show notification
-                        let message = '';
-                        if (this.textContent.includes('Windows')) {
-                            message = 'Download untuk Windows akan dimulai. Dalam implementasi nyata, ini akan mengunduh file installer EmuFlash.';
-                        } else {
-                            message = 'Perintah pip install emuflash akan dijalankan. Dalam implementasi nyata, ini akan menginstal package EmuFlash dari PyPI.';
-                        }
-                        
-                        // Create a notification
-                        const notification = document.createElement('div');
-                        notification.className = 'fixed top-4 right-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300';
-                        notification.textContent = message;
-                        document.body.appendChild(notification);
-                        
-                        // Remove notification after 3 seconds
-                        setTimeout(() => {
-                            notification.style.opacity = '0';
-                            notification.style.transform = 'translateY(-10px)';
-                            setTimeout(() => {
-                                document.body.removeChild(notification);
-                            }, 300);
-                        }, 3000);
+        // Close menu when clicking links with animation
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navLinks.style.opacity = '0';
+                navLinks.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    if (navLinks.parentNode) {
+                        navLinks.remove();
                     }
-                });
-            });
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
+                    const targetId = link.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
@@ -677,44 +1943,328 @@
                             behavior: 'smooth'
                         });
                     }
-                });
+                }, 300);
+                document.removeEventListener('click', closeMenuHandler);
             });
-            
-            // Mobile menu toggle
-            const mobileMenuButton = document.querySelector('button.md\\:hidden');
-            if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', function() {
-                    const navLinks = document.createElement('div');
-                    navLinks.className = 'fixed top-16 left-0 right-0 bg-gray-900 border-b border-gray-800 p-4 z-40 md:hidden';
-                    navLinks.innerHTML = `
-                        <div class="flex flex-col space-y-4">
-                            <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Home</a>
-                            <a href="#features" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Fitur</a>
-                            <a href="#games" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Game</a>
-                            <a href="#download" class="text-gray-300 hover:text-blue-400 transition-colors py-2">Download</a>
-                        </div>
-                    `;
-                    
-                    // Check if menu is already open
-                    const existingMenu = document.querySelector('.mobile-menu');
-                    if (existingMenu) {
-                        document.body.removeChild(existingMenu);
-                        return;
-                    }
-                    
-                    navLinks.classList.add('mobile-menu');
-                    document.body.appendChild(navLinks);
-                    
-                    // Close menu when clicking outside
-                    document.addEventListener('click', function closeMenu(e) {
-                        if (!navLinks.contains(e.target) && e.target !== mobileMenuButton) {
-                            document.body.removeChild(navLinks);
-                            document.removeEventListener('click', closeMenu);
-                        }
-                    });
-                });
-            }
         });
-    </script>
+    });
+}
+
+// Download system - Direct download tanpa countdown
+let currentDownloadType = 'windows';
+
+function startDownload(type) {
+    currentDownloadType = type;
+    
+    // Show modal dengan animasi
+    const modal = document.getElementById('downloadModal');
+    const modalContent = modal.querySelector('.download-modal-content');
+    
+    // Update modal content based on download type
+    updateModalContent(type);
+    
+    // Show modal with animation
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.classList.add('active');
+        modalContent.style.transform = 'scale(1)';
+    }, 10);
+    
+    // Start progress bar animation
+    const progressBar = document.getElementById('progressBar');
+    progressBar.style.animation = 'progress 1.5s ease-in-out forwards, shimmer 2s infinite linear';
+    
+    // Set timeout untuk auto download setelah progress bar selesai
+    setTimeout(() => {
+        executeDownload(type);
+    }, 1500);
+}
+
+function updateModalContent(type) {
+    const title = document.getElementById('downloadTitle');
+    const description = document.getElementById('downloadDesc');
+    const fileSize = document.getElementById('fileSize');
+    
+    switch(type) {
+        case 'windows':
+            title.textContent = 'Download EmuFlash untuk Windows';
+            description.textContent = 'Mempersiapkan download installer Windows...';
+            fileSize.textContent = 'Ukuran: 5 MB (Portable)';
+            break;
+        case 'android':
+            title.textContent = 'Download EmuFlash untuk Android';
+            description.textContent = 'Mempersiapkan download APK Android...';
+            fileSize.textContent = 'Ukuran: 8 MB';
+            break;
+        case 'games':
+            title.textContent = 'Download Game Collection';
+            description.textContent = 'Mempersiapkan download koleksi game...';
+            fileSize.textContent = 'Ukuran: 1.5 GB';
+            break;
+        case 'pypi':
+            title.textContent = 'Instal EmuFlash via pip';
+            description.textContent = 'Mempersiapkan instalasi Python package...';
+            fileSize.textContent = 'Command: pip install emuflash';
+            break;
+    }
+}
+
+function executeDownload(type) {
+    // Hide modal first
+    const modal = document.getElementById('downloadModal');
+    modal.classList.remove('active');
+    
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+    
+    // Show notification
+    let message = '';
+    let downloadUrl = '#';
+    let notificationType = 'success';
+    
+    switch(type) {
+        case 'windows':
+            message = '✅ Download EmuFlash untuk Windows (40 MB) telah dimulai!';
+            downloadUrl = 'https://github.com/dwibakti/emuflash/releases/download/v10.0/EmuFlash-Windows-10.0.exe';
+            break;
+        case 'android':
+            message = '✅ Download EmuFlash untuk Android (56 MB) telah dimulai!';
+            downloadUrl = 'https://github.com/dwibakti/emuflash/releases/download/v10.0/EmuFlash-Android-10.0.apk';
+            break;
+        case 'games':
+            message = '✅ Download Game Collection (1.7 GB) telah dimulai!';
+            downloadUrl = 'https://mega.nz/folder/T8Rw1aqQ#LibEwt9QdgNU1aBMV6XLxw';
+            break;
+        case 'pypi':
+            message = '📋 Perintah pip telah disalin ke clipboard! Jalankan: pip install emuflash';
+            notificationType = 'info';
+            // Copy to clipboard
+            navigator.clipboard.writeText('pip install emuflash').then(() => {
+                console.log('Command copied to clipboard');
+            }).catch(err => {
+                console.error('Failed to copy command: ', err);
+                message = 'Gagal menyalin ke clipboard. Silakan ketik: pip install emuflash';
+                notificationType = 'error';
+            });
+            break;
+    }
+    
+    // If not PyPI, simulate download
+    if (type !== 'pypi') {
+        // Create temporary download link
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = '';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    
+    // Show notification
+    showNotification(message, notificationType);
+}
+
+function cancelDownload() {
+    const modal = document.getElementById('downloadModal');
+    const modalContent = modal.querySelector('.download-modal-content');
+    
+    modalContent.style.transform = 'scale(0.9)';
+    modal.classList.remove('active');
+    
+    setTimeout(() => {
+        modal.style.display = 'none';
+        modalContent.style.transform = 'scale(1)';
+        showNotification('Download dibatalkan', 'info');
+    }, 300);
+}
+
+function showNotification(message, type) {
+    // Remove existing notifications
+    document.querySelectorAll('.notification').forEach(notif => {
+        notif.remove();
+    });
+    
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    
+    // Set color based on type
+    if (type === 'success') {
+        notification.classList.add('bg-gradient-to-r', 'from-green-600', 'to-emerald-700');
+    } else if (type === 'error') {
+        notification.classList.add('bg-gradient-to-r', 'from-red-600', 'to-rose-700');
+    } else if (type === 'info') {
+        notification.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-indigo-700');
+    }
+    
+    notification.innerHTML = `
+        <div class="flex items-center">
+            <div class="mr-3">
+                ${type === 'success' ? '<i class="fas fa-check-circle"></i>' : ''}
+                ${type === 'error' ? '<i class="fas fa-exclamation-circle"></i>' : ''}
+                ${type === 'info' ? '<i class="fas fa-info-circle"></i>' : ''}
+            </div>
+            <div>${message}</div>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // Remove notification after 4 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 500);
+    }, 4000);
+}
+
+// FAQ toggle function with animation
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('i');
+    
+    // Close all other FAQ answers
+    document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+        if (otherAnswer !== answer && otherAnswer.classList.contains('active')) {
+            otherAnswer.classList.remove('active');
+            const otherIcon = otherAnswer.previousElementSibling.querySelector('i');
+            if (otherIcon) {
+                otherIcon.classList.remove('fa-chevron-up');
+                otherIcon.classList.add('fa-chevron-down');
+            }
+        }
+    });
+    
+    // Toggle current FAQ with animation
+    if (answer.classList.contains('active')) {
+        answer.classList.remove('active');
+        if (icon) {
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    } else {
+        answer.classList.add('active');
+        if (icon) {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        }
+    }
+}
+
+// Initialize FAQ items
+document.querySelectorAll('.faq-answer').forEach(answer => {
+    answer.style.maxHeight = '0';
+});
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate elements on page load
+    setTimeout(() => {
+        document.querySelectorAll('.animate-fade-in-up').forEach((el, index) => {
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+    }, 300);
+    
+    // Add click outside to close download modal
+    document.addEventListener('click', function(e) {
+        const modal = document.getElementById('downloadModal');
+        if (modal && modal.classList.contains('active')) {
+            const modalContent = modal.querySelector('.download-modal-content');
+            if (!modalContent.contains(e.target)) {
+                cancelDownload();
+            }
+        }
+    });
+    
+    // Add escape key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('downloadModal');
+            if (modal && modal.classList.contains('active')) {
+                cancelDownload();
+            }
+            
+            // Close mobile menu
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.remove();
+            }
+        }
+    });
+    
+    // Ensure all download buttons work properly
+    document.addEventListener('click', function(e) {
+        const downloadButton = e.target.closest('button');
+        if (downloadButton && (downloadButton.textContent.includes('Download') || 
+                               downloadButton.textContent.includes('Instal'))) {
+            const parentCard = downloadButton.closest('div.bg-gradient-to-br');
+            if (parentCard) {
+                const platform = parentCard.querySelector('h3').textContent;
+                if (platform.includes('Windows')) {
+                    startDownload('windows');
+                } else if (platform.includes('Mobile') || platform.includes('Android')) {
+                    startDownload('android');
+                } else if (platform.includes('Games')) {
+                    startDownload('games');
+                } else if (platform.includes('PyPI')) {
+                    startDownload('pypi');
+                }
+            }
+        }
+    });
+    
+    // Add parallax effect on scroll
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax');
+        
+        parallaxElements.forEach(el => {
+            const speed = 0.5;
+            const yPos = -(scrolled * speed);
+            el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        });
+        
+        // Animate elements on scroll
+        const heroSection = document.getElementById('home');
+        if (heroSection) {
+            const heroContent = heroSection.querySelector('.slide-in-left');
+            if (heroContent) {
+                const heroRect = heroSection.getBoundingClientRect();
+                const heroProgress = 1 - Math.max(0, Math.min(1, heroRect.top / window.innerHeight));
+                heroContent.style.opacity = heroProgress;
+                heroContent.style.transform = `translateX(${-50 + (50 * heroProgress)}px)`;
+            }
+        }
+        
+        lastScrollTop = scrolled;
+    });
+    
+    // Add hover effect to all cards
+    document.querySelectorAll('.hover-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 25px 50px -12px rgba(59, 130, 246, 0.25)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '';
+        });
+    });
+});
+</script>
 </body>
 </html>

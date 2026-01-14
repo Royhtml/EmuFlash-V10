@@ -1,0 +1,120 @@
+PERJANJIAN LISENSI PENGGUNA (END USER LICENSE AGREEMENT)  
+EMULATOR "DWI BAKTI N DEV-EMU"
+
+Versi 10.0 - 11/01/2026
+
+PENERBIT (PEMEGANG HAK CIPTA):
+Dwi Bakti (selanjutnya disebut "Pihak Pertama")  
+Dev Terkait (selanjutnya disebut "Pihak Kedua")  
+Keduanya secara bersama-sama disebut sebagai "Penerbit" atau "Pemegang Hak Cipta".
+
+PENGGUNA (END USER):  
+Individu atau entitas yang mengunduh, menginstal, atau menggunakan perangkat lunak ini (selanjutnya disebut "Pengguna").
+
+
+
+ PASAL 1 - DEFINISI
+
+1. "Emulator" atau "Perangkat Lunak" merujuk pada program komputer "DWIBDEV-EMU" beserta seluruh file, dokumentasi, dan materi terkait yang dikembangkan bersama oleh Pihak Pertama dan Pihak Kedua.
+2. "Konten Berhak Cipta" merujuk pada game, sistem operasi, firmware, ROM, BIOS, atau karya kreatif lain yang dilindungi hak cipta milik pihak ketiga, yang mungkin diperlukan atau dijalankan menggunakan Emulator ini.
+
+
+
+ PASAL 2 - GRANT OF LICENSE (PEMBERIAN LISENSI)
+
+1. Lisensi Terbatas:  
+   Penerbit memberikan kepada Pengguna lisensi pribadi, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut untuk menggunakan Emulator ini secara gratis, hanya untuk keperluan pribadi dan non-komersial.
+
+2. Kepemilikan:  
+   Hak cipta, merek dagang, dan semua hak kekayaan intelektual atas Emulator ini tetap sepenuhnya milik Penerbit (Dwi Bakti dan Dev Terkait). Lisensi ini bukan merupakan penjualan perangkat lunak.
+
+
+
+ PASAL 3 - RESTRIKSI PENGGUNAAN
+
+Pengguna TIDAK DIPERBOLEHKAN untuk:
+
+1. Menggunakan Konten Ilegal:  
+   Menggunakan Emulator ini untuk menjalankan ROM, BIOS, atau Konten Berhak Cipta tanpa memiliki salinan fisik resmi yang sah dari produk asli, kecuali diatur lain oleh hukum yang berlaku (seperti fair use untuk kepentingan preservasi/arsip pribadi sesuai yurisdiksi setempat).
+
+2. Komersialisasi:  
+   Menjual, menyewakan, mensublisensikan, atau memanfaatkan Emulator untuk tujuan komersial tanpa izin tertulis dari Penerbit.
+
+3. Rekayasa Balik:  
+   Melakukan dekompilasi, rekayasa balik, modifikasi kode sumber, atau upaya mengurai struktur Emulator, kecuali diizinkan secara tegas oleh hukum yang berlaku.
+
+4. Distribusi Ulang:  
+   Mendistribusikan ulang, mempublikasikan, atau membundling Emulator dengan program lain tanpa izin tertulis dari Penerbit.
+
+
+
+ PASAL 4 - KONTEN PIHAK KETIGA & KEWAJIBAN HUKUM
+
+1. Kepatuhan Hukum:  
+   Pengguna bertanggung jawab sepenuhnya untuk mematuhi semua hukum terkait hak cipta, merek dagang, dan kekayaan intelektual yang berlaku di yurisdiksi masing-masing terkait penggunaan Emulator dan Konten Berhak Cipta.
+
+2. Pernyataan Penerbit:  
+   Penerbit TIDAK MENYEDIAKAN ROM, BIOS, atau Konten Berhak Cipta lainnya. Emulator ini hanyalah alat teknis yang memungkinkan eksekusi perangkat lunak yang kompatibel.
+
+3. Penggunaan Legal Disarankan:  
+   Peneritus merekomendasikan Pengguna hanya menggunakan ROM/BIOS dari salinan fisik yang dimiliki secara sah, atau konten yang secara eksplisit memiliki lisensi public domain/open source.
+
+
+
+ PASAL 5 - DISCLAIMER & BATASAN TANGGUNG JAWAB
+
+1. "SEBAGAIMANA ADANYA" (AS-IS):  
+   Emulator ini disediakan TANPA JAMINAN APAPUN, baik tersurat maupun tersirat. Penerbit tidak menjamin bahwa Emulator bebas dari bug, kesalahan, atau kompatibel dengan semua sistem Pengguna.
+
+2. Tanpa Tanggung Jawab Hukum:  
+   Penerbit TIDAK BERTANGGUNG JAWAB atas kerusakan perangkat lunak/perangkat keras, kehilangan data, atau tuntutan hukum yang timbul dari penggunaan atau ketidakmampuan menggunakan Emulator ini.
+
+
+
+ PASAL 6 - HUBUNGAN KERJA SAMA PENERBIT
+
+1. Kepemilikan Bersama (Joint Ownership):  
+   Hak cipta atas Emulator ini dimiliki secara bersama oleh Dwi Bakti dan Dev Terkait, dengan kontribusi yang diakui secara setara, kecuali ditetapkan lain dalam perjanjian internal di antara mereka.
+
+2. Pengambilan Keputusan:  
+   Keputusan terkait pembaruan, distribusi, atau pengembangan lebih lanjut dari Emulator memerlukan kesepakatan bersama dari kedua Penerbit.
+
+3. Penyelesaian Sengketa Internal:  
+   Segala sengketa antara Pihak Pertama dan Pihak Kedua terkait Emulator ini akan diselesaikan secara musyawarah internal terlebih dahulu.
+
+
+
+ PASAL 7 - KETENTUAN UMUM
+
+1. Perubahan Lisensi:  
+   Penerbit berhak mengubah ketentuan lisensi ini dengan pemberitahuan melalui saluran resmi (misalnya: situs web, repositori resmi).
+
+2. Pencabutan Lisensi:  
+   Lisensi dapat dicabut secara otomatis jika Pengguna melanggar ketentuan dalam perjanjian ini.
+
+3. Hukum yang Berlaku:  
+   Perjanjian ini tunduk pada hukum yang berlaku di negara domisili Penerbit, atau hukum internasional terkait hak cipta perangkat lunak.
+
+4. Keterpisahan Klausul:  
+   Jika salah satu ketentuan dinyatakan tidak sah, ketentuan lainnya tetap berlaku.
+
+
+
+Dengan mengunduh, menginstal, atau menggunakan Emulator ini, Anda menyatakan telah membaca, memahami, dan menyetujui seluruh ketentuan dalam Perjanjian Lisensi ini.
+
+
+
+Hormat kami,
+
+Penerbit:  
+Dwi Bakti N Dev  
+
+
+
+
+Catatan untuk Dwi Bakti & Dev Terkait:  
+1. informasi yang relevan.  
+2. Sertakan EULA ini dalam file `LICENSE.txt` di repositori proyek.  
+3. Tambahkan pemberitahuan hak cipta di kode sumber utama, contoh:  
+   `© 2026 Dwi Bakti & Dev Terkait. All rights reserved.`  
+4. Untuk kejelasan hak kontribusi internal, disarankan membuat perjanjian kolaborasi terpisah yang mendetail.

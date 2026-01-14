@@ -1,0 +1,58 @@
+# UTF-8
+
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(10, 0, 0, 0),
+    prodvers=(10, 0, 0, 0),
+    mask=0x3f,
+    flags=0x0,
+    OS=0x40004,
+    fileType=0x1,
+    subtype=0x0,
+    date=(0, 0)
+  ),
+  kids=[
+    StringFileInfo([
+      # EN-US
+      StringTable(
+        '040904B0',
+        [
+          StringStruct('CompanyName', 'dwi bakti n dev'),
+          StringStruct('FileDescription', 'Application built by developer Dwi Bakti N Dev'),
+          StringStruct('FileVersion', '10.0.0'),
+          StringStruct('ProductName', 'EmuFlash Manager'),
+          StringStruct('ProductVersion', '10.0.0'),
+          StringStruct('OriginalFilename', 'EmuFlash Manager'),
+          StringStruct('InternalName', 'EmuFlash Manager'),
+          StringStruct('Comments', 'EmuFlash Manager is a special Emulator Flash'),
+          StringStruct('LegalCopyright', '© 2025 dwi bakti n dev. All rights reserved.'),
+          StringStruct('LegalTrademarks', 'All product names, logos, and brands are property of their respective owners.'),
+          StringStruct('PrivateBuild', ''),
+          StringStruct('SpecialBuild', '')
+        ]
+      ),
+      # ID-ID (Indonesian – Indonesia = 0x0421)
+      StringTable(
+        '042104B0',
+        [
+          StringStruct('CompanyName', 'dwi bakti n dev'),
+          StringStruct('FileDescription', 'Aplikasi Ini Dibuat Oleh Pengembang Bernama Dwi Bakti N Dev'),
+          StringStruct('FileVersion', '10.0.0'),
+          StringStruct('ProductName', 'EmuFlash Manager'),
+          StringStruct('ProductVersion', '1.0.0'),
+          StringStruct('OriginalFilename', 'EmuFlash Manager'),
+          StringStruct('InternalName', 'EmuFlash Manager'),
+          StringStruct('Comments', 'EmuFlash Manager Adalah aplikasi sangat spacial untuk flashing emulator'),
+          StringStruct('LegalCopyright', '© 2025 dwi bakti n dev. Hak cipta dilindungi.'),
+          StringStruct('LegalTrademarks', 'Nama produk, logo, dan merek dagang adalah milik pemiliknya masing-masing.'),
+          StringStruct('PrivateBuild', ''),
+          StringStruct('SpecialBuild', '')
+        ]
+      )
+    ]),
+    VarFileInfo([
+      # Cantumkan semua pasangan (lang, codepage) yang dipakai di atas:
+      VarStruct('Translation', [0x0409, 1200, 0x0421, 1200])
+    ])
+  ]
+)

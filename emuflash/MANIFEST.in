@@ -1,0 +1,10 @@
+include README.md
+include LICENSE.txt
+
+recursive-include emuflash *.py
+recursive-include emuflash *.png *.jpg *.jpeg *.gif *.ico
+recursive-include emuflash assets/*
+recursive-include emuflash roms/*
+
+global-exclude __pycache__
+global-exclude *.pyc

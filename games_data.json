@@ -8,12 +8,13 @@
         "tts_enabled": true
     },
     "Age_Of _War_2.swf": {
-        "upload_date": "2026-01-11 15:20:57",
-        "category": "Uncategorized",
-        "rating": "0",
-        "play_count": 1,
-        "last_played": "2026-01-11 15:21:53",
-        "description": "Classic Flash game",
-        "controls": "Arrow keys, Spacebar"
+        "category": "Arcade",
+        "rating": "5",
+        "play_count": 3,
+        "last_played": "2026-01-14 16:57:55",
+        "play_time": {
+            "2026-01-14": 41
+        },
+        "total_play_time": 41
     }
 }
